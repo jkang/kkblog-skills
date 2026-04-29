@@ -40,7 +40,7 @@ video-lens is a coding agent skill that fetches a YouTube transcript and generat
 
 video-lens uses the universal [SKILL.md](https://agents.md/) format — any agent that supports it can run this skill.
 
-[![Install with skills CLI](https://img.shields.io/badge/skills-kar2phi%2Fvideo--lens-blue?logo=npm)](https://skills.sh/kar2phi/video-lens)
+[![Install with skills CLI](https://img.shields.io/badge/skills-jkang%2Fkkblog--skills-blue?logo=npm)](https://skills.sh/jkang/kkblog-skills)
 
 ---
 
@@ -62,22 +62,22 @@ No repo clone or Task required — just run:
 
 ```bash
 mkdir -p ~/.claude/skills/video-lens && \
-curl -Lo ~/.claude/skills/video-lens/SKILL.md https://raw.githubusercontent.com/kar2phi/video-lens/main/skills/video-lens/SKILL.md && \
-curl -Lo ~/.claude/skills/video-lens/template.html https://raw.githubusercontent.com/kar2phi/video-lens/main/skills/video-lens/template.html && \
+curl -Lo ~/.claude/skills/video-lens/SKILL.md https://raw.githubusercontent.com/jkang/kkblog-skills/main/video-lens/skills/video-lens/SKILL.md && \
+curl -Lo ~/.claude/skills/video-lens/template.html https://raw.githubusercontent.com/jkang/kkblog-skills/main/video-lens/skills/video-lens/template.html && \
 pip install youtube-transcript-api yt-dlp
 
 # Optional: deno is required by yt-dlp as a JavaScript runtime
 brew install deno
 ```
 
-> **Other agents:** Replace `~/.claude/` with `~/.copilot/`, `~/.gemini/`, `~/.cursor/`, etc. in the commands above. Or use `npx skills add kar2phi/video-lens` to install for all detected agents at once.
+> **Other agents:** Replace `~/.claude/` with `~/.copilot/`, `~/.gemini/`, `~/.cursor/`, etc. in the commands above. Or use `npx skills add jkang/kkblog-skills/video-lens` to install for all detected agents at once.
 
 ### Option C — Full install (with Raycast + dev tools)
 
 #### 1. Clone and install Python dependencies
 
 ```bash
-git clone https://github.com/kar2phi/video-lens.git
+git clone https://github.com/jkang/kkblog-skills.git
 cd video-lens
 task install-libraries
 
