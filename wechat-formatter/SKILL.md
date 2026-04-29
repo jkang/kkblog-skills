@@ -1,6 +1,8 @@
 ---
 name: wechat-formatter
 description: Formats Markdown content into HTML strictly adhering to the WeChat Official Account aesthetic styling rules.
+metadata:
+  author: KK
 ---
 
 # WeChat Formatter Skill
