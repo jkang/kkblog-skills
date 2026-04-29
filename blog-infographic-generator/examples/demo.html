@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog 18 核心观点插图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #020617;
+            /* Slate 950 */
+            color: #f8fafc;
+            padding: 40px 20px;
+        }
+
+        .infographic-container {
+            width: 800px;
+            background: #0f172a;
+            /* Slate 900 */
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            margin: 0 auto 60px auto;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grad-text {
+            background: linear-gradient(135deg, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -150px;
+            left: -150px;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .bg-glow-right {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -150px;
+            right: -150px;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        /* Grid background pattern */
+        .pattern-bg {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 插图 0：根因分析 4 个点 -->
+    <div class="infographic-container">
+        <div class="pattern-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 to-rose-950/20 z-0"></div>
+        <div class="bg-glow"
+            style="background: radial-gradient(circle, rgba(225,29,72,0.1) 0%, rgba(0,0,0,0) 70%); top: -150px; left: -150px;">
+        </div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <span
+                    class="px-3 py-1 bg-rose-500/10 text-rose-400 text-xs font-bold uppercase tracking-widest rounded-full border border-rose-500/20">Root
+                    Causes</span>
+                <h2 class="text-3xl font-bold mt-4 text-slate-100">AI 落地陷入“单点提效”的 4 大根因</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 relative">
+                <!-- 中心连接线视觉 -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <div
+                        class="w-20 h-20 rounded-full bg-slate-900 border-4 border-rose-500/20 flex flex-col items-center justify-center text-rose-500/80 font-bold shadow-[0_0_30px_rgba(225,29,72,0.15)] backdrop-blur-sm z-0">
+                        <span class="text-xs">单点提效</span>
+                        <span class="text-sm font-black">困局</span>
+                    </div>
+                </div>
+
+                <!-- 1. 责任缺失 -->
+                <div
+                    class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700/50 hover:border-rose-500/40 transition-colors shadow-lg relative z-10 group overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-rose-500/10 rounded-full blur-xl -mr-8 -mt-8 group-hover:bg-rose-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-slate-900 border border-rose-500/30 flex items-center justify-center text-rose-400 text-xl font-black shadow-inner">
+                            01</div>
+                        <h3 class="text-lg font-bold text-slate-200">责任缺失：无真正的 Owner</h3>
+                    </div>
+                    <div
+                        class="text-sm text-slate-400 bg-slate-900/60 p-4 rounded-2xl border border-slate-700/50 relative z-10">
+                        <p class="mb-3 flex items-start gap-2"><span class="text-rose-400 font-bold shrink-0">表象:</span>
+                            <span>多部门参与变成“附加任务”，跑通 Demo 后极易停滞。</span>
+                        </p>
+                        <p class="flex items-start gap-2"><span class="text-rose-400 font-bold shrink-0">本质:</span>
+                            <span class="text-slate-300">没有专职人员为 AI 最终落地到核心业务的结果负全责。</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. 决策错位 -->
+                <div
+                    class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700/50 hover:border-orange-500/40 transition-colors shadow-lg relative z-10 group overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 rounded-full blur-xl -mr-8 -mt-8 group-hover:bg-orange-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-slate-900 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xl font-black shadow-inner">
+                            02</div>
+                        <h3 class="text-lg font-bold text-slate-200">决策错位：投资机制不匹配</h3>
+                    </div>
+                    <div
+                        class="text-sm text-slate-400 bg-slate-900/60 p-4 rounded-2xl border border-slate-700/50 relative z-10">
+                        <p class="mb-3 flex items-start gap-2"><span
+                                class="text-orange-400 font-bold shrink-0">表象:</span> <span>算不清精确 ROI，AI
+                                投资往往被无限压缩为“最小试点”。</span></p>
+                        <p class="flex items-start gap-2"><span class="text-orange-400 font-bold shrink-0">本质:</span>
+                            <span class="text-slate-300">传统 IT 的立项逻辑，无法适应 AI 项目“在探索中收敛”的技术特性。</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. 组织局限 -->
+                <div
+                    class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700/50 hover:border-amber-500/40 transition-colors shadow-lg relative z-10 group overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-xl -mr-8 -mt-8 group-hover:bg-amber-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-slate-900 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl font-black shadow-inner">
+                            03</div>
+                        <h3 class="text-lg font-bold text-slate-200">组织局限：不敢触碰业务重构</h3>
+                    </div>
+                    <div
+                        class="text-sm text-slate-400 bg-slate-900/60 p-4 rounded-2xl border border-slate-700/50 relative z-10">
+                        <p class="mb-3 flex items-start gap-2"><span
+                                class="text-amber-400 font-bold shrink-0">表象:</span> <span>KPI
+                                按部门割裂，跨越部门墙的端到端流程重构阻力极大。</span></p>
+                        <p class="flex items-start gap-2"><span class="text-amber-400 font-bold shrink-0">本质:</span>
+                            <span class="text-slate-300">组织默认 AI 的目标是优化局部业务，被长期限制在不敢重构的“安全区”。</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. 认知停滞 -->
+                <div
+                    class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700/50 hover:border-red-500/40 transition-colors shadow-lg relative z-10 group overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-red-500/10 rounded-full blur-xl -mr-8 -mt-8 group-hover:bg-red-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-4 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-slate-900 border border-red-500/30 flex items-center justify-center text-red-400 text-xl font-black shadow-inner">
+                            04</div>
+                        <h3 class="text-lg font-bold text-slate-200">认知停滞：未建立 AI-Native 思维</h3>
+                    </div>
+                    <div
+                        class="text-sm text-slate-400 bg-slate-900/60 p-4 rounded-2xl border border-slate-700/50 relative z-10">
+                        <p class="mb-3 flex items-start gap-2"><span class="text-red-400 font-bold shrink-0">表象:</span>
+                            <span>仅视 AI 为辅助工具，人依然是驱动流程运转的唯一主体。</span>
+                        </p>
+                        <p class="flex items-start gap-2"><span class="text-red-400 font-bold shrink-0">本质:</span> <span
+                                class="text-slate-300">底层认知没有转变，还没准备好让 AI 真正接管业务流程。</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 插图 1：单点提效 vs 业务重构 -->
+    <div class="infographic-container">
+        <div class="pattern-bg"></div>
+        <div class="bg-glow"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-10">
+                <span
+                    class="px-3 py-1 bg-violet-500/10 text-violet-400 text-xs font-bold uppercase tracking-widest rounded-full border border-violet-500/20">The
+                    Evolution</span>
+                <h2 class="text-3xl font-bold mt-4 text-slate-100">AI 落地的两条演进路径</h2>
+            </div>
+
+            <!-- 路径 1: 单点提效 -->
+            <div class="mb-12 relative">
+                <div class="absolute -left-4 top-0 bottom-0 w-1 bg-slate-800 rounded-full"></div>
+                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest ml-4">❌ 现状：单点提效 (局部优化)</h3>
+                <div
+                    class="ml-4 flex items-center justify-between bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50">
+                    <div
+                        class="w-20 h-16 rounded-xl bg-slate-700 flex flex-col items-center justify-center text-slate-300 font-bold border border-slate-600 shadow-inner">
+                        <span class="text-xs font-normal text-slate-400">环节 1</span>
+                        <span>人工</span>
+                    </div>
+
+                    <div class="flex-1 h-0.5 bg-slate-700 mx-3"></div>
+
+                    <!-- AI 提效节点 -->
+                    <div class="relative">
+                        <div class="absolute -inset-2 bg-violet-500/20 rounded-xl blur-md"></div>
+                        <div
+                            class="w-24 h-16 rounded-xl bg-slate-800 flex flex-col items-center justify-center text-violet-400 font-bold border-2 border-violet-500/50 relative z-10 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                            <span class="text-xs font-normal text-violet-400/70">环节 2</span>
+                            <span>AI 提效</span>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 h-0.5 bg-slate-700 mx-3"></div>
+
+                    <div
+                        class="w-20 h-16 rounded-xl bg-slate-700 flex flex-col items-center justify-center text-slate-300 font-bold border border-slate-600 shadow-inner">
+                        <span class="text-xs font-normal text-slate-400">环节 3</span>
+                        <span>人工</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-500 mt-3 ml-4">本质：原有流程不变，AI 仅替代局部节点的手工操作。</p>
+            </div>
+
+            <!-- 路径 2: 业务重构 -->
+            <div class="relative">
+                <div
+                    class="absolute -left-4 top-0 bottom-0 w-1 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]">
+                </div>
+                <h3 class="text-sm font-bold text-emerald-400 mb-4 uppercase tracking-widest ml-4">✅ 目标：业务重构 (全局跃升)</h3>
+                <div class="ml-4 relative bg-slate-800/80 p-6 rounded-2xl border border-emerald-500/30 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-violet-500/5"></div>
+                    <div class="relative z-10 flex flex-col items-center">
+                        <!-- AI 引擎接管 -->
+                        <div
+                            class="w-full h-12 bg-gradient-to-r from-violet-600/90 to-emerald-600/90 rounded-xl flex items-center justify-center text-white font-bold mb-6 shadow-lg border border-white/10">
+                            AI-Native 流程引擎 (端到端流转)
+                        </div>
+
+                        <div class="flex items-center justify-around w-full px-4">
+                            <!-- 标准化执行 -->
+                            <div class="flex flex-col items-center flex-1">
+                                <div class="w-px h-6 bg-emerald-500/50 mb-2"></div>
+                                <div
+                                    class="w-full max-w-[120px] h-14 rounded-xl bg-slate-900/80 flex items-center justify-center text-slate-300 border border-emerald-500/30 text-sm shadow-inner">
+                                    自动输入/处理</div>
+                            </div>
+
+                            <!-- 关键决策 (人机协同) -->
+                            <div class="flex flex-col items-center flex-1 relative -top-4">
+                                <div class="w-px h-10 bg-violet-400/50 mb-2"></div>
+                                <div
+                                    class="w-full max-w-[140px] h-16 rounded-xl bg-violet-900/40 flex flex-col items-center justify-center text-violet-200 border-2 border-violet-400/50 shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+                                    <span class="text-xs text-violet-300">人工聚焦</span>
+                                    <span class="font-bold">高阶决策 / 审批</span>
+                                </div>
+                            </div>
+
+                            <!-- 标准化输出 -->
+                            <div class="flex flex-col items-center flex-1">
+                                <div class="w-px h-6 bg-emerald-500/50 mb-2"></div>
+                                <div
+                                    class="w-full max-w-[120px] h-14 rounded-xl bg-slate-900/80 flex items-center justify-center text-slate-300 border border-emerald-500/30 text-sm shadow-inner">
+                                    自动执行/输出</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-emerald-400/80 mt-3 ml-4">本质：AI 驱动整体流程运转，人类聚焦核心决策，跨越部门边界。</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 插图 2：破局的 4 个关键维度 (人钱权脑) -->
+    <div class="infographic-container">
+        <div class="pattern-bg"></div>
+        <div class="bg-glow-right"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <span
+                    class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-widest rounded-full border border-amber-500/20">The
+                    Solution</span>
+                <h2 class="text-3xl font-bold mt-4 text-slate-100">破除 AI 落地魔咒的 4 个举措</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <!-- 1. 人 -->
+                <div
+                    class="bg-slate-800/60 p-7 rounded-3xl border border-slate-700/50 hover:border-violet-500/50 transition-colors shadow-lg relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-violet-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-5 relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+                            人</div>
+                        <h3 class="text-xl font-bold text-slate-100">设立全职 AIBP</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-3 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-violet-400"></div> <span>懂业务 + 懂 AI +
+                                能推动，缺一不可</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-violet-400"></div> <span><strong
+                                    class="text-slate-200">全职化</strong>，为 AI 最终落地结果负全责</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-violet-400"></div> <span>KPI 必须与<strong
+                                    class="text-slate-200">业务实际收益</strong>深度挂钩</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2. 钱 -->
+                <div
+                    class="bg-slate-800/60 p-7 rounded-3xl border border-slate-700/50 hover:border-emerald-500/50 transition-colors shadow-lg relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-emerald-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-5 relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+                            钱</div>
+                        <h3 class="text-xl font-bold text-slate-100">重塑投资机制</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-3 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400"></div> <span>敏捷投资：<strong
+                                    class="text-slate-200">探索期 (闭环) → 放大期 (规模化)</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400"></div> <span>用<strong
+                                    class="text-slate-200">“流程优化指标”</strong>替代早期苛刻的 ROI</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+                            <span>做出来再算账，将不确定性变为试错法</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3. 权 -->
+                <div
+                    class="bg-slate-800/60 p-7 rounded-3xl border border-slate-700/50 hover:border-blue-500/50 transition-colors shadow-lg relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-blue-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-5 relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+                            权</div>
+                        <h3 class="text-xl font-bold text-slate-100">一把手顶层统筹</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-3 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400"></div> <span>自上而下明确 <strong
+                                    class="text-slate-200">1-2 条核心业务链路</strong> 作为试点</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                            <span>高层授权：适度打破部门墙与冗余审批流</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400"></div> <span>引入跨部门的<strong
+                                    class="text-slate-200">端到端考核指标</strong>强行牵引</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4. 脑 -->
+                <div
+                    class="bg-slate-800/60 p-7 rounded-3xl border border-slate-700/50 hover:border-amber-500/50 transition-colors shadow-lg relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-amber-500/20 transition-all">
+                    </div>
+                    <div class="flex items-center gap-4 mb-5 relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+                            脑</div>
+                        <h3 class="text-xl font-bold text-slate-100">树立 AI-Native 思维</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-3 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-amber-400"></div> <span>系统接管标准化执行，<strong
+                                    class="text-slate-200">人工聚焦高阶决策</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+                            <span>预置异常兜底机制与人工闭环反馈链路</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-amber-400"></div> <span>管理重心转向<strong
+                                    class="text-slate-200">维护人机协作的网络与规则</strong></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 插图 3：传统模式 vs AI-Native 模式 -->
+    <div class="infographic-container">
+        <div class="pattern-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-950 opacity-80 z-0"></div>
+        <div class="bg-glow" style="top: -200px; left: 50%; transform: translateX(-50%); width: 600px;"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <span
+                    class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-widest rounded-full border border-cyan-500/20">Paradigm
+                    Shift</span>
+                <h2 class="text-3xl font-bold mt-4 text-slate-100">底层认知跃迁：从传统到 AI-Native</h2>
+            </div>
+
+            <div class="flex gap-4">
+                <!-- 传统模式 -->
+                <div class="flex-1 bg-slate-800/80 border border-slate-700 rounded-3xl overflow-hidden shadow-lg">
+                    <div class="bg-slate-800 p-6 text-center border-b border-slate-700">
+                        <h3 class="text-xl font-bold text-slate-300">传统模式</h3>
+                        <p class="text-sm text-slate-400 mt-2 font-medium">人驱动流程，系统辅助人</p>
+                    </div>
+                    <div class="p-8 space-y-6">
+                        <div>
+                            <div class="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">执行主体</div>
+                            <div
+                                class="text-sm text-slate-300 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                人</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">管理对象</div>
+                            <div
+                                class="text-sm text-slate-300 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                管人、管岗位职责</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">优化粒度</div>
+                            <div
+                                class="text-sm text-slate-300 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                单个岗位的局部效率</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">组织设计</div>
+                            <div
+                                class="text-sm text-slate-300 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                围绕独立职能与孤立岗位</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VS 图标 -->
+                <div class="flex items-center justify-center -mx-6 z-20">
+                    <div
+                        class="w-12 h-12 rounded-full bg-slate-950 border-4 border-slate-800 flex items-center justify-center text-slate-400 font-black text-lg shadow-2xl">
+                        VS
+                    </div>
+                </div>
+
+                <!-- AI-Native 模式 -->
+                <div
+                    class="flex-1 bg-slate-800 border-2 border-violet-500/40 rounded-3xl overflow-hidden relative shadow-[0_0_40px_rgba(139,92,246,0.15)] transform scale-[1.02] z-10">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-emerald-500/5 z-0 pointer-events-none">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="bg-gradient-to-r from-violet-900/60 to-emerald-900/40 p-6 text-center border-b border-violet-500/30">
+                            <h3 class="text-xl font-black grad-text">AI-Native 模式</h3>
+                            <p class="text-sm text-emerald-400 mt-2 font-bold">AI 驱动流程，人机深度协同</p>
+                        </div>
+                        <div class="p-8 space-y-6">
+                            <div>
+                                <div class="text-xs text-violet-400/80 mb-2 uppercase tracking-wider font-bold">执行主体
+                                </div>
+                                <div
+                                    class="text-sm text-slate-100 bg-slate-900/80 border border-violet-500/30 p-4 rounded-xl shadow-inner">
+                                    <span class="text-violet-400 font-bold">AI</span> 执行大部分，<span
+                                        class="text-emerald-400 font-bold">人</span> 聚焦关键决策
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-violet-400/80 mb-2 uppercase tracking-wider font-bold">管理对象
+                                </div>
+                                <div
+                                    class="text-sm text-slate-100 bg-slate-900/80 border border-violet-500/30 p-4 rounded-xl shadow-inner">
+                                    管端到端流程、协作规则、异常兜底</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-violet-400/80 mb-2 uppercase tracking-wider font-bold">优化粒度
+                                </div>
+                                <div
+                                    class="text-sm text-slate-100 bg-slate-900/80 border border-violet-500/30 p-4 rounded-xl shadow-inner">
+                                    全局端到端流程的产出质量与周期</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-violet-400/80 mb-2 uppercase tracking-wider font-bold">组织设计
+                                </div>
+                                <div
+                                    class="text-sm text-slate-100 bg-slate-900/80 border border-violet-500/30 p-4 rounded-xl shadow-inner">
+                                    围绕连贯业务流与高优决策节点</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

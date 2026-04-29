@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic Base Template (Interactive)</title>
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        :root {
+            --bg-deep: #020617;      /* Slate 950 */
+            --card-bg: #0f172a;      /* Slate 900 */
+            --border-color: #1e293b; /* Slate 800 */
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Tabs Navigation */
+        .tabs-container {
+            width: 800px;
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding: 4px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            border-radius: 12px;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab-button.active {
+            background: #8b5cf6;
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .tab-button:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: #f8fafc;
+        }
+
+        /* Infographic Container */
+        .infographic-container {
+            width: 800px;
+            background: var(--bg-deep);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: none; /* Controlled by JS */
+        }
+
+        .infographic-container.active {
+            display: block;
+        }
+
+        /* Glassmorphism helpers */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glow effects */
+        .glow-spot {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .grad-text {
+            background: linear-gradient(135deg, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Grid pattern */
+        .grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            margin-top: 24px;
+            width: 800px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn-action {
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-download {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(4px);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(139, 92, 246, 0.3);
+            border-top: 3px solid #8b5cf6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs-container">
+        <button class="tab-button active" onclick="switchTab(0)">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>图 1：核心观点</span>
+        </button>
+        <button class="tab-button" onclick="switchTab(1)">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>图 2：演进路径</span>
+        </button>
+        <button class="tab-button" onclick="switchTab(2)">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>图 3：关键举措</span>
+        </button>
+    </div>
+
+    <!-- Infographic 1 -->
+    <div id="infographic-0" class="infographic-container active">
+        <div class="grid-pattern"></div>
+        <div class="glow-spot" style="top: -150px; left: -150px;"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-violet-500/10 text-violet-400 text-xs font-bold uppercase tracking-widest rounded-full border border-violet-500/20 mb-4">
+                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                    <span>Paradigm Shift</span>
+                </div>
+                <h1 class="text-4xl font-black text-white tracking-tight">AI 落地核心观点</h1>
+                <p class="text-slate-400 mt-4 text-lg">点击下载按钮可保存为高质量 PNG 截图</p>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl border border-slate-700/50">
+                <p class="text-slate-300 leading-relaxed italic text-center">
+                    "AI 的价值不在于替代人，而在于重塑业务流程的底层逻辑。"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Infographic 2 (Placeholder for demo) -->
+    <div id="infographic-1" class="infographic-container">
+        <div class="grid-pattern"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">图 2：演进路径示意</h2>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-slate-800/50 p-4 rounded-xl text-center border border-slate-700">工具化</div>
+                <div class="bg-violet-500/20 p-4 rounded-xl text-center border border-violet-500/30">协作化</div>
+                <div class="bg-emerald-500/20 p-4 rounded-xl text-center border border-emerald-500/30">原生化</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Infographic 3 (Placeholder for demo) -->
+    <div id="infographic-2" class="infographic-container">
+        <div class="grid-pattern"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">图 3：关键举措清单</h2>
+            </div>
+            <ul class="space-y-4 text-slate-300">
+                <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-emerald-400 w-5 h-5"></i> 设立全职 AIBP</li>
+                <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-emerald-400 w-5 h-5"></i> 重塑投资机制</li>
+                <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-emerald-400 w-5 h-5"></i> 一把手顶层统筹</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="control-panel">
+        <button class="btn-action btn-download" onclick="downloadCurrent()">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>保存当前图片 (PNG)</span>
+        </button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner mb-4"></div>
+        <div class="font-bold">正在导出高清配图...</div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        let currentTabIndex = 0;
+
+        function switchTab(index) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach((btn, i) => {
+                if (i === index) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+
+            // Update containers
+            const containers = document.querySelectorAll('.infographic-container');
+            containers.forEach((container, i) => {
+                if (i === index) container.classList.add('active');
+                else container.classList.remove('active');
+            });
+
+            currentTabIndex = index;
+        }
+
+        async function downloadCurrent() {
+            const container = document.getElementById(`infographic-${currentTabIndex}`);
+            const loader = document.getElementById('loading-overlay');
+            
+            loader.style.display = 'flex';
+            
+            try {
+                // Short delay for UI update
+                await new Promise(r => setTimeout(r, 100));
+                
+                const canvas = await html2canvas(container, {
+                    scale: 2, // High resolution
+                    backgroundColor: '#020617', // Match var(--bg-deep)
+                    useCORS: true,
+                    logging: false
+                });
+                
+                const link = document.createElement('a');
+                link.download = `infographic-${currentTabIndex + 1}.png`;
+                link.href = canvas.toDataURL('image/png', 1.0);
+                link.click();
+            } catch (err) {
+                console.error('Export failed:', err);
+                alert('导出失败，请检查控制台。');
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
