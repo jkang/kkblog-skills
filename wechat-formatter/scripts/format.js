@@ -103,7 +103,7 @@ renderer.listitem = function (text) {
 };
 
 renderer.strong = function (text) {
-    return `<span style="font-weight:bold;color:${SECONDARY};border-bottom:1px solid ${ACCENT};">${text}</span>`;
+    return `<span style="font-weight:bold;color:${SECONDARY};">${text}</span>`;
 };
 
 renderer.codespan = function (code) {

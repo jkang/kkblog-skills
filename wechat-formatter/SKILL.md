@@ -36,7 +36,7 @@ The script uses `marked` to parse markdown. It overrides default renderers to in
 - **Paragraphs**: 15px, Starry Blues (`#10213E`), line-height 1.8.
 - **Blockquotes**: Tech Gray background (`#F5F5F6`), Amethyst (`#625D9C`) left border, muted text.
 - **Lists**: Flexible layout with Creative Blue bullets.
-- **Strong**: Amethyst (`#625D9C`) color with a Creative Blue subtle bottom border.
+- **Strong**: Bold text with Amethyst (`#625D9C`) color for emphasis.
 - **Tags**: Tech Gray background with Creative Blue outline.
 
 ## Verification
