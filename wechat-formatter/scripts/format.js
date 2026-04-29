@@ -4,8 +4,10 @@ const matter = require('gray-matter');
 const { marked } = require('marked');
 
 // Brand palette
-const BLUE = '#4A90E2';
-const DARK = '#343A40';
+// Brand palette - Premium Zen
+const BLUE = '#3b82f6'; // Blue 500
+const DARK = '#0f172a'; // Slate 900
+const ACCENT = '#8b5cf6'; // Violet 500
 const FONT = "Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
 
 // Helper for Base64 encoding
@@ -157,9 +159,6 @@ const html = `<!DOCTYPE html>
 </div>
 </body>
 </html>`;
-
-fs.writeFileSync(outputFile, html, 'utf-8');
-console.log('Successfully generated ' + outputFile + ' with Base64 images.');
 
 fs.writeFileSync(outputFile, html, 'utf-8');
 console.log('Successfully generated ' + outputFile + ' with Base64 images.');

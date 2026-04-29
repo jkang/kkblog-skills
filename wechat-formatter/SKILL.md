@@ -23,7 +23,7 @@ Whenever the user requests to format a blog post for WeChat, or explicitly asks 
    ```
    *Example:*
    ```bash
-   cd /Users/superkkk/MyCoding/kkjm-homepage
+   cd <project-root>
    node skills/wechat-formatter/scripts/format.js content/blogs/blog14.md public/wechatblog14.html
    ```
 

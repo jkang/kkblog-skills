@@ -18,19 +18,22 @@ description: 重新设计的博客头图生成器，采用 HTML/SVG 方案，生
    - **自洽性**：当图片按 1:1 居中裁剪时，安全区内的内容应是一个完整的、美观的设计，不应有关键元素被截断。
 
 
-## 🎨 视觉风格 (与 KKJM 品牌保持一致)
+## 🎨 视觉风格 (Premium Zen)
 
-- **深/浅配色**：采用 `example.html` 中的深蓝色调 (`#0f172a`) 或极简白。
-- **2.5D/科技氛围**：使用抽象的 SVG 神经网络节点、渐变线条、散景（Bokeh）效果。
-- **排版分级**：通常包含一个巨大的数字（如有）、一个简短的标签（如 "AI-Native PM"）、以及一个核心概念词。
+- **极简白基调**：背景采用干净的白色 (`#ffffff`) 或浅灰色 (`#f1f5f9`)。
+- **核心引擎布局**：中心为一个圆角矩形 Hub，周围环绕轨道和连接线。
+- **排版分级**：
+   - **Label (JetBrains Mono)**: 顶部的小字标签，全大写，间距拉开。
+   - **Title (Noto Serif SC)**: 主标题，加粗，具有人文感。
+   - **Icon (Lucide)**: 中心 Hub 内的图标，代表博客核心意象。
 
 ## 📥 输入 mapping
 
 每次输入为博客的 Frontmatter（YAML），你需要按如下逻辑映射到 HTML 中：
 
-- **title** -> 提取出主标题或数字（如 "5项修炼" 中的 "5"）。
-- **tags** -> 选取其中最具有代表性的 1-2 个词作为顶部 Badge。
-- **summary** -> 作为设计意象的参考，不一定直接呈现在图中，但决定了背景 SVG 的氛围。
+- **title** -> 提取出核心主标题。
+- **tags** -> 选取一个最核心的作为 `label`。
+- **summary** -> 提取出一个关键词作为中心 `icon` (参考 Lucide 图标库)。
 
 ## 📝 输出要求
 
@@ -40,23 +43,21 @@ description: 重新设计的博客头图生成器，采用 HTML/SVG 方案，生
 ### 核心 HTML 结构演示
 
 ```html
-<div class="cover-container theme-dark">
-  <!-- 背景层：网格、光晕 -->
-  <div class="bg-grid"></div>
-  <div class="glow glow-1"></div>
+<div class="container">
+  <div class="bg-dots"></div>
   
-  <!-- 安全区 383x383 -->
-  <div class="safe-zone">
-    <!-- 背景 SVG 装饰 -->
-    <svg class="core-svg">...</svg>
-    
-    <!-- 核心文字 -->
-    <div class="content-group">
-      <div class="tag-badge">AI-NATIVE PM</div>
-      <div class="huge-number">5</div>
-      <div class="concept-title">核心修炼</div>
+  <!-- 中心核心引擎 -->
+  <div class="core-engine">
+    <div class="engine-orbit"></div>
+    <div class="engine-hub">
+      <i data-lucide="[icon-name]" style="color:#3b82f6; width:40px; height:40px;"></i>
+    </div>
+    <div class="engine-title">
+      <div class="engine-label">[LABEL TEXT]</div>
+      <div class="engine-text">[CORE TITLE]</div>
     </div>
   </div>
+  <!-- ... 装饰节点 ... -->
 </div>
 ```
 

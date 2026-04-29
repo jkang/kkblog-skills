@@ -96,7 +96,7 @@ description: |
 
 ```bash
 # 进入项目根目录
-cd /Users/superkkk/MyCoding/kkjm-homepage
+cd <project-root>
 
 # 运行截图 (自动识别高度并保存为同名 jpg)
 node skills/blog-infographic-generator/scripts/capture.js content/blogs/[blog-id]/[blog-id]_infographic.html
