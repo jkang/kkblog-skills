@@ -35,6 +35,9 @@ When asked to help write a blog post, follow these strict phases:
 ### Phase 0: Insight Discovery (RECOMMENDED)
 Before starting with this skill, use the **`insights-deepdive`** skill to collide with the author and uncover deep, logical insights. This ensures the blog has a strong "soul" and unique perspective.
 
+> [!TIP]
+> **KK's Tip**: 别急着动笔。没有经过碰撞的观点，就像没有灵魂的躯壳，AI 写得再顺滑也只是文字垃圾。
+
 ### Phase 1: Blog Design Confirmation (MANDATORY)
 **Do NOT start drafting the blog post immediately.** First, generate a structured "Blog Design Confirmation" based on the user's intent. If the user has already used `insights-deepdive`, use the "Blog Foundation" document as the primary input for this design.
 
@@ -58,6 +61,9 @@ The Blog Design MUST include the following 8 elements:
 8. **相关blog文章及链接** (Related Blogs & Links):
    - Links to existing relevant blogs on this site.
    - External reference links if applicable.
+
+> [!TIP]
+> **KK's Tip**: 确认环节是给读者的“承诺”。如果在这个阶段你都无法用一句话打动自己，那就别指望能打动受众。
 
 ### Phase 2: Drafting the Content
 Once the user approves or adjusts the Blog Design, write the post in **Markdown** format strictly adhering to [blog_style_guide.md](references/blog_style_guide.md).
@@ -90,6 +96,9 @@ Once the user approves or adjusts the Blog Design, write the post in **Markdown*
 - **Language & Remarks**: 绝对不要在文章中添加多余的英文备注（如“中文（English）”式的中英双语对照）。全篇使用纯中文表达（不可翻译的专有名词直接保留英文），坚决去掉各种画蛇添足的英文注音和解释！
 - **Formatting**: Include the required Markdown frontmatter using the defined template in [blog_template.md](assets/blog_template.md).
 
+> [!TIP]
+> **KK's Tip**: 写作时想象自己在咖啡馆里给聪明的朋友讲故事。不需要术语，只需要真实的逻辑和温润的手感。
+
 ### Phase 3: Final Review (Style & Logical Deduction)
 After completing the draft, you **MUST** review the content against two critical dimensions before presenting it to the user:
 
@@ -102,6 +111,9 @@ After completing the draft, you **MUST** review the content against two critical
    - Automatically run the content through the rules defined in the `de-ai-writer` skill. Ensure all "AI-flavor", redundant transitions, greasy slang, and empty rhetoric are stripped out.
 
 *If the review identifies structural or logical flaws, you must proactively propose optimizations and refine the text.*
+
+> [!TIP]
+> **KK's Tip**: 最后的审核是“去油”的过程。每一处被删减的废话，都是对读者时间的尊重。
 
 ## Bundled Resources
 
