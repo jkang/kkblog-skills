@@ -28,15 +28,16 @@ Whenever the user requests to format a blog post for WeChat, or explicitly asks 
    ```
 
 ## Styling Rules Handled by Script
-The script uses `marked` to parse markdown. It overrides default renderers to inject the following exact inline styles:
-- **Container**: Max width 667px, margin auto, with specific WeChat standard classes (`rich_media_content`, `js_underline_content`).
-- **H2**: Bold, 22px, `#4A90E2` left border (4px), 12px left padding.
-- **H3**: Bold, 20px, `#4A90E2` bottom border (2px), 100% width, margin auto.
-- **H4**: Bold, 15px, white text on `#4A90E2` background, inline-block with padding.
-- **Paragraphs**: 15px, `#343A40`, line-height 1.8, 16px vertical margins.
-- **Blockquotes**: Gray background `#f8f9fa`, 12px padding, 12px border radius, gray text.
-- **Lists**: Custom `<ul>`/`<ol>` reset styling with customized bullets/numbers in `#4A90E2` blue color.
-- **Strong**: Bold text combined with `#4A90E2` color for emphasis.
+The script uses `marked` to parse markdown. It overrides default renderers to inject the following exact inline styles based on the **Inspire Design System**:
+- **Container**: Max width 667px, margin auto, using `MiSans` typography.
+- **H2**: Starry Blues (`#10213E`), 22px, with a **Stacks SVG Icon** and Creative Blue left border.
+- **H3**: Starry Blues, 20px, with a **Diamond Marker (◆)** and Creative Blue bottom underline.
+- **H4**: **Badge style** with an **Arrow SVG Icon** and a Starry-to-Creative Blue gradient background.
+- **Paragraphs**: 15px, Starry Blues (`#10213E`), line-height 1.8.
+- **Blockquotes**: Tech Gray background (`#F5F5F6`), Amethyst (`#625D9C`) left border, muted text.
+- **Lists**: Flexible layout with Creative Blue bullets.
+- **Strong**: Amethyst (`#625D9C`) color with a Creative Blue subtle bottom border.
+- **Tags**: Tech Gray background with Creative Blue outline.
 
 ## Verification
 After generating the output HTML, confirm with the user if they want to preview it or if they need any manual adjustments to the generated styling.
