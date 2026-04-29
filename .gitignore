@@ -9,3 +9,8 @@ __pycache__/
 dist/
 build/
 local_settings.py
+
+# Excluded Skills
+video-lens/
+blog-organizer/
+

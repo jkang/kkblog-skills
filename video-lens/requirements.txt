@@ -1,3 +1,0 @@
-youtube-transcript-api>=0.6.3
-yt-dlp>=2026.3.17
-pytest>=8.0
